@@ -43,34 +43,34 @@ export default function Home() {
         </div>
       </div>
       <div className="mx-auto max-w-6xl pb-18">
-        <div className="grid grid-cols-3 gap-10 mt-24 mb-12">
+        <div className="grid grid-cols-3 max-md:grid-cols-1 max-md:gap-6 gap-10 mt-24 mb-12 max-sm:px-8 max-sm:mb-0">
           <div className="border-t border-black/20">
-            <p className="text-[5rem] font-inter">12</p>
+            <p className="text-[5rem] max-md:text-[3.5rem] font-inter">12</p>
             <p className="text-black/70 font-inter">Integrated platforms in one ecosystem.</p>
           </div>
           <div className="border-t border-black/20">
-            <p className="text-[5rem] font-inter">20</p>
+            <p className="text-[5rem] max-md:text-[3.5rem] font-inter">20</p>
             <p className="text-black/70 font-inter">Types of participants, from smallholders to exporters.</p>
           </div>
           <div className="border-t border-black/20">
-            <p className="text-[5rem] font-inter">6</p>
+            <p className="text-[5rem] max-md:text-[3.5rem] font-inter">6</p>
             <p className="text-black/70 font-inter">Links in the chain, from farmers to market.</p>
           </div>
         </div>
-        <div className="grid grid-cols-[35%_65%] gap-10 py-18">
+        <div className="grid grid-cols-[35%_65%] max-md:grid-cols-1 gap-10 py-18">
           <div>
-            <Image src={photo1} alt="photo of tractor" className="h-60 object-cover rounded-3xl" />
+            <Image src={photo1} alt="photo of tractor" className="h-60 max-md:h-52 object-cover rounded-3xl" />
           </div>
           <div>
-            <p className="font-inter text-[3rem] leading-12">A digital agribusiness ecosystem for a <span className="italic font-instrument-serif font-medium">prosperous Africa</span></p>
+            <p className="font-inter text-[3rem] max-md:text-[2rem] leading-12 max-md:leading-9">A digital agribusiness ecosystem for a <span className="italic font-instrument-serif font-medium">prosperous Africa</span></p>
             <p className="font-geist my-6">We combine agriculture, digital technology, AI, agricultural data, finance, commerce, logistics and market access into one platform, to make agriculture more productive, transparent, accessible and profitable.</p>
             <div className="flex border border-black rounded-full py-2.5 px-5 w-fit ">
               <p>About the company</p>
             </div>
           </div>
         </div>
-        <div className="grid grid-cols-[40%_30%_30%] gap-5 py-16">
-          <div className="relative flex rounded-3xl overflow-hidden h-[85vh] w-full row-span-2 flex-col justify-end">
+        <div className="grid grid-cols-[40%_30%_30%] max-lg:grid-cols-2 max-md:grid-cols-1 gap-5 py-16 max-sm:py-0">
+          <div className="relative flex rounded-3xl overflow-hidden h-[85vh] max-lg:h-[50vh] max-md:h-[60vh] w-full row-span-2 max-lg:row-span-1 max-md:row-span-1 flex-col justify-end">
             <Image src={photo4} alt="" fill className="object-cover" priority />
             <div className="relative z-10 p-6 text-white mt-auto">
               <div className="flex gap-2 items-center">
@@ -80,24 +80,24 @@ export default function Home() {
               <p className="text-[2.1rem] leading-8">A connected agricultural economy, from <span className="italic text-[2.2rem] font-instrument-serif">seed to sale.</span></p>
             </div>
           </div>
-          <div className="bg-green-900 rounded-2xl p-6 flex flex-col justify-between">
+          <div className="bg-green-900 rounded-2xl p-6 flex flex-col justify-between min-h-[200px] max-md:min-h-[180px]">
             <p className="text-mint">Vision</p>
             <p className="text-white text-inter text-[1.3rem]">To become Africa's leading digital agribusiness ecosystem.</p>
           </div>
-          <div className="bg-gray-200 rounded-2xl p-6 flex flex-col justify-between">
+          <div className="bg-gray-200 rounded-2xl p-6 flex flex-col justify-between min-h-[200px] max-md:min-h-[180px]">
             <p className="text-gray-600">Mission</p>
             <p className="text-black text-inter text-[1.3rem]">To empower farmers and agribusinesses with technology, data, finance and reliable markets.</p>
           </div>
-          <div className="bg-white rounded-2xl p-6 flex flex-col justify-between">
+          <div className="bg-white rounded-2xl p-6 flex flex-col justify-between min-h-[200px] max-md:min-h-[180px]">
             <p className="text-black/70">For Buyers</p>
             <p className="text-black text-inter text-[1.3rem]">Verified producers, reliable supply and commodity intelligence.</p>
           </div>
-          <div className="bg-mint rounded-2xl p-6 flex flex-col justify-between">
+          <div className="bg-mint rounded-2xl p-6 flex flex-col justify-between min-h-[200px] max-md:min-h-[180px]">
             <p className="text-green-900">For Farmers</p>
             <p className="text-green-950 text-inter text-[1.3rem]">Access, intelligence, finance, inputs, machinery and markets.</p>
           </div>
         </div>
-        <section className="w-full py-18 font-sans text-[#1a1a1a]">
+        <section className="w-full py-18 font-sans text-[#1a1a1a] max-sm:py-10">
           {/* Header Section */}
           <div className="relative mb-8 flex flex-col md:flex-row md:items-start justify-between">
             {/* Left Label */}
@@ -106,10 +106,8 @@ export default function Home() {
               <span className="text-sm font-medium">What we trade</span>
             </div>
             {/* Title */}
-            <h2 className="md:w-3/4 text-4xl md:text-5xl lg:text-[3.5rem] leading-[1.1] font-normal tracking-tight mt-6 md:mt-0">
-              Nigerian commodities, <span className="italic font-instrument-serif">quoted on</span>
-              <br />
-              <span className="italic font-instrument-serif">WhatsApp.</span>
+            <h2 className="md:w-3/4 text-4xl md:text-5xl lg:text-[3.5rem] leading-[1.1] font-normal tracking-tight mt-6 md:mt-0 max-sm:mt-0">
+              Nigerian commodities, <span className="italic font-instrument-serif">quoted on WhatsApp.</span>
             </h2>
           </div>
           {/* Grid of Cards */}
@@ -213,7 +211,7 @@ export default function Home() {
           </div>
         </section>
       </div>
-      <section className="w-full py-12">
+      <section className="w-full py-12 max-sm:pb-4">
         <div className="bg-[#103d27] rounded-[2rem] p-8 md:p-16 text-white font-sans">
           <div className="mb-16 max-w-3xl">
             <div className="flex items-center gap-2 mb-2">
@@ -257,8 +255,8 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="w-full py-24 font-sans text-[#1a1a1a] max-w-6xl mx-auto">
-        <div className="flex items-center justify-between max-lg:flex-col max-lg:items-start max-lg:gap-8">
+      <section className="w-full py-24 font-sans text-[#1a1a1a] max-w-6xl mx-auto max-sm:py-10">
+        <div className="flex items-center justify-between max-lg:flex-col max-lg:items-start max-lg:gap-8 max-sm:gap-2">
           <div className="flex items-center gap-2 w-1/4 max-lg:w-full max-lg:mb-4">
             <div className="h-2 w-2 rounded-full bg-[#4a7c59]"></div>
             <span className="text-sm font-medium">Who we serve</span>
@@ -284,15 +282,15 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="relative overflow-hidden min-h-[75vh] rounded-3xl flex flex-col justify-between">
+      <section className="relative overflow-hidden min-h-[75vh] max-md:min-h-[60vh] rounded-3xl flex flex-col justify-between">
         <Image src={photo3} alt="Agriculture farm background" fill priority className="object-cover object-center " />
-        <div className="relative z-10 max-w-3xl mx-auto self-center my-auto">
-          <p className="text-[5rem] text-white leading-19 my-8 tracking-tight text-center">Talk to us about the <br /> commodity <span className="font-instrument-serif font-medium italic">you need</span></p>
-          <div className="flex gap-4 justify-self-center">
-            <div className="bg-mint py-3 px-6 rounded-4xl flex items-center justify-center cursor-pointer w-fit">
+        <div className="relative z-10 max-w-3xl max-md:max-w-xl mx-auto self-center my-auto px-4 max-md:px-6">
+          <p className="text-[5rem] max-md:text-[3rem] text-white leading-19 max-md:leading-[1.2] my-8 tracking-tight text-center">Talk to us about the <br className="max-md:hidden" /> commodity <span className="font-instrument-serif font-medium italic">you need</span></p>
+          <div className="flex max-md:flex-col gap-4 justify-self-center max-md:items-center">
+            <div className="bg-mint py-3 px-6 rounded-4xl flex items-center justify-center cursor-pointer w-fit max-md:w-full">
               <p>Request a quote</p>
             </div>
-            <div className="py-3 border border-white/30 rounded-4xl px-6 text-white font-medium w-fit cursor-pointer">
+            <div className="py-3 border border-white/30 rounded-4xl px-6 text-white font-medium w-fit max-md:w-full flex items-center justify-center cursor-pointer">
               <p>Chat on WhatsApp</p>
             </div>
           </div>
