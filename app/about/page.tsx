@@ -20,7 +20,7 @@ export default function page() {
           </div>
           <div className="max-w-[320px] flex flex-col gap-6 pb-2">
             <p className="text-[0.89rem] leading-5 text-white font-normal">
-              Grainsbankconnects farmers, buyers and every link between them on one technology-driven platform
+              Grainsbank connects farmers, buyers and every link between them on one technology-driven platform
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <Link href="/marketplace" className="bg-mint text-black text-sm font-medium px-6 py-3 rounded-full text-center hover:bg-mint/90 transition-colors">

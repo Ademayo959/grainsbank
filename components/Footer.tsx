@@ -4,7 +4,7 @@ import Link from 'next/link';
 export default function Footer() {
   return (
     <footer className="bg-green-950 rounded-[2rem] px-8 mt-2 pt-10 pb-4 md:px-16 md:py-16 text-white w-full flex flex-col justify-between min-h-80">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 w-full">
+      <div className="grid grid-cols-1 md:grid-cols-[40%_15%_15%_30%] gap-12 md:gap-8 w-full">
         <div className="flex flex-col gap-3">
           <h2 className="text-xl font-bold tracking-widest text-white">GRAINSBANK</h2>
           <p className="text-gray-300 text-sm md:text-base leading-relaxed max-w-[250px]">
@@ -15,15 +15,21 @@ export default function Footer() {
           <h3 className="text-[#d3f37a] text-sm font-medium mb-2">Explore</h3>
           <a href="#" className="text-gray-300 hover:text-white transition-colors text-sm md:text-base w-fit">Marketplace</a>
           <Link href="/about" className="text-gray-300 hover:text-white transition-colors text-sm md:text-base w-fit">About</Link>
-          <a href="#" className="text-gray-300 hover:text-white transition-colors text-sm md:text-base w-fit">Ecosystem</a>
+          <Link href="/solutions" className="text-gray-300 hover:text-white transition-colors text-sm md:text-base w-fit">Solutions</Link>
           <Link href="/contact" className="text-gray-300 hover:text-white transition-colors text-sm md:text-base w-fit">Contact</Link>
+        </div>
+        <div className="flex flex-col gap-2">
+          <h3 className="text-[#d3f37a] text-sm font-medium mb-2">Explore</h3>
+          <Link href="/signup" className="text-gray-300 hover:text-white transition-colors text-sm md:text-base w-fit">Register</Link>
+          <Link href="/partner" className="text-gray-300 hover:text-white transition-colors text-sm md:text-base w-fit">Partner with Us</Link>
+          <Link href="/solutions" className="text-gray-300 hover:text-white transition-colors text-sm md:text-base w-fit">Facebook</Link>
         </div>
         {/* Column 3: Contact Info */}
         <div className="flex flex-col gap-2">
           <h3 className="text-[#d3f37a] text-sm font-medium mb-2">Contact</h3>
           <a href="tel:+2348000000000" className="text-gray-300 hover:text-white transition-colors text-sm md:text-base w-fit">+234 800 000 0000</a>
           <a href="mailto:hello@grainsbank.com" className="text-gray-300 hover:text-white transition-colors text-sm md:text-base w-fit">hello@grainsbank.com</a>
-          <a href="#" className="text-gray-300 hover:text-white transition-colors text-sm md:text-base w-fit">WhatsApp</a>
+          <a href="https://wa.me/2348109992384" className="text-gray-300 hover:text-white transition-colors text-sm md:text-base w-fit" target="_blank" rel="noopener noreferrer">WhatsApp</a>
         </div>
 
       </div>

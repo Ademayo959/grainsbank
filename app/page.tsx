@@ -15,7 +15,9 @@ export default function Home() {
     <div className="w-full p-2 bg-gray-100">
       <div className="relative overflow-hidden min-h-[98vh] rounded-3xl flex flex-col justify-between mb-12">
         <Image src={photo3} alt="Agriculture farm background" fill priority className="object-cover object-center " />
-        <Navbar />
+        <div className="max-sm:mx-2">
+          <Navbar />
+        </div>
         <div className="relative z-10 px-6 pb-10 md:px-[60px] md:pb-[40px] flex flex-col lg:flex-row justify-between items-start lg:items-end gap-10 w-full">
           <div className="max-w-[700px]">
             <div className="inline-block border border-white/30 bg-white/10 backdrop-blur-sm px-4 py-1.5 rounded-full text-[13px] text-white mb-6">
