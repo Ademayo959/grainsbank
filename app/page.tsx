@@ -34,7 +34,7 @@ export default function Home() {
               One connected platform for farmers, suppliers, financiers, traders, processors and buyers.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
-              <Link href="/marketplace" className="bg-mint text-black text-sm font-medium px-6 py-3 rounded-full text-center hover:bg-mint/90 transition-colors">
+              <Link href="/dashboard" className="bg-mint text-black text-sm font-medium px-6 py-3 rounded-full text-center hover:bg-mint/90 transition-colors">
                 Explore marketplace
               </Link>
               <Link href="/contact" className="bg-white/10 border border-white/20 backdrop-blur-sm text-white text-sm font-medium px-6 py-3 rounded-full text-center hover:bg-white/20 transition-colors">
@@ -66,9 +66,9 @@ export default function Home() {
           <div>
             <p className="font-inter text-[3rem] max-md:text-[2rem] leading-12 max-md:leading-9">A digital agribusiness ecosystem for a <span className="italic font-instrument-serif font-medium">prosperous Africa</span></p>
             <p className="font-geist my-6">We combine agriculture, digital technology, AI, agricultural data, finance, commerce, logistics and market access into one platform, to make agriculture more productive, transparent, accessible and profitable.</p>
-            <div className="flex border border-black rounded-full py-2.5 px-5 w-fit ">
+            <Link href="/about" className="flex border border-black rounded-full py-2.5 px-5 w-fit ">
               <p>About the company</p>
-            </div>
+            </Link>
           </div>
         </div>
         <div className="grid grid-cols-[40%_30%_30%] max-lg:grid-cols-2 max-md:grid-cols-1 gap-5 py-16 max-sm:py-0">
@@ -206,9 +206,9 @@ export default function Home() {
           {/* Footer Note */}
           <div className="text-sm text-gray-600 font-medium">
             Don't see your commodity?{' '}
-            <a href="#" className="text-black cursor-pointer underline decoration-1 underline-offset-4 hover:text-gray-900 hover:underline-offset-8 transition-all">
+            <Link href="/dashboard" className="text-black cursor-pointer underline decoration-1 underline-offset-4 hover:text-gray-900 hover:underline-offset-8 transition-all">
               Tell us what you need
-            </a>{' '}
+            </Link>{' '}
             and we'll source it.
           </div>
         </section>
@@ -289,12 +289,12 @@ export default function Home() {
         <div className="relative z-10 max-w-3xl max-md:max-w-xl mx-auto self-center my-auto px-4 max-md:px-6">
           <p className="text-[5rem] max-md:text-[3rem] text-white leading-19 max-md:leading-[1.2] my-8 tracking-tight text-center">Talk to us about the <br className="max-md:hidden" /> commodity <span className="font-instrument-serif font-medium italic">you need</span></p>
           <div className="flex max-md:flex-col gap-4 justify-self-center max-md:items-center">
-            <div className="bg-mint py-3 px-6 rounded-4xl flex items-center justify-center cursor-pointer w-fit max-md:w-full">
+            <Link href="/dashboard" className="bg-mint py-3 px-6 rounded-4xl flex items-center justify-center cursor-pointer w-fit max-md:w-full">
               <p>Request a quote</p>
-            </div>
-            <div className="py-3 border border-white/30 rounded-4xl px-6 text-white font-medium w-fit max-md:w-full flex items-center justify-center cursor-pointer">
+            </Link>
+            <a href="https://wa.me/2348109992384" className="py-3 border border-white/30 rounded-4xl px-6 text-white font-medium w-fit max-md:w-full flex items-center justify-center cursor-pointer">
               <p>Chat on WhatsApp</p>
-            </div>
+            </a>
           </div>
         </div>
       </section>

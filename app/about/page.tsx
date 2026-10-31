@@ -23,7 +23,7 @@ export default function page() {
               Grainsbank connects farmers, buyers and every link between them on one technology-driven platform
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
-              <Link href="/marketplace" className="bg-mint text-black text-sm font-medium px-6 py-3 rounded-full text-center hover:bg-mint/90 transition-colors">
+              <Link href="/dashboard" className="bg-mint text-black text-sm font-medium px-6 py-3 rounded-full text-center hover:bg-mint/90 transition-colors">
                 Explore marketplace
               </Link>
             </div>
@@ -174,12 +174,12 @@ export default function page() {
         <div className="relative z-10 max-w-3xl mx-auto self-center my-auto">
           <p className="text-[5rem] text-white leading-19 my-8 tracking-tight text-center">Let's move your next <br /><span className="font-instrument-serif font-medium italic">shipment.</span></p>
           <div className="flex gap-4 justify-self-center">
-            <div className="bg-mint py-3 px-6 rounded-4xl flex items-center justify-center cursor-pointer w-fit">
+            <Link href="/dashboard" className="bg-mint py-3 px-6 rounded-4xl flex items-center justify-center cursor-pointer w-fit">
               <p>Request a quote</p>
-            </div>
-            <div className="py-3 border border-white/30 rounded-4xl px-6 text-white font-medium w-fit cursor-pointer">
+            </Link>
+            <Link href="/contact" className="py-3 border border-white/30 rounded-4xl px-6 text-white font-medium w-fit cursor-pointer">
               <p>Contact us</p>
-            </div>
+            </Link>
           </div>
         </div>
       </section>

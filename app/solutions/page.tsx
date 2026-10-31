@@ -83,36 +83,36 @@ export default function page() {
               <h3 className="text-2xl md:text-[28px] font-normal leading-tight">Processors</h3>
               <p className="text-[15px] text-gray-600 leading-relaxed md:pt-2">Reliable commodity supply and producer networks.</p>
               <div className="md:text-right md:pt-2">
-                <a href="#" className="inline-flex items-center gap-1 text-sm font-medium hover:opacity-70 transition-opacity whitespace-nowrap">
+                <Link href="/partner" className="inline-flex items-center gap-1 text-sm font-medium hover:opacity-70 transition-opacity whitespace-nowrap">
                   Partner with us
                   <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M1 11L11 1M11 1H3.5M11 1V8.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
-                </a>
+                </Link>
               </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-[280px_1fr_140px] gap-4 md:gap-8 items-start py-8 border-b border-gray-300">
               <h3 className="text-2xl md:text-[28px] font-normal leading-tight">Input suppliers</h3>
               <p className="text-[15px] text-gray-600 leading-relaxed md:pt-2">Access to a large digital farmer marketplace.</p>
               <div className="md:text-right md:pt-2">
-                <a href="#" className="inline-flex items-center gap-1 text-sm font-medium hover:opacity-70 transition-opacity whitespace-nowrap">
+                <Link href="/partner" className="inline-flex items-center gap-1 text-sm font-medium hover:opacity-70 transition-opacity whitespace-nowrap">
                   Partner with us
                   <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M1 11L11 1M11 1H3.5M11 1V8.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
-                </a>
+                </Link>
               </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-[280px_1fr_140px] gap-4 md:gap-8 items-start py-8 border-b border-gray-300">
               <h3 className="text-2xl md:text-[28px] font-normal leading-tight">Financial institutions</h3>
               <p className="text-[15px] text-gray-600 leading-relaxed md:pt-2">Structured agricultural data, farmer networks and digital records.</p>
               <div className="md:text-right md:pt-2">
-                <a href="#" className="inline-flex items-center gap-1 text-sm font-medium hover:opacity-70 transition-opacity whitespace-nowrap">
+                <Link href="partner" className="inline-flex items-center gap-1 text-sm font-medium hover:opacity-70 transition-opacity whitespace-nowrap">
                   Partner with us
                   <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M1 11L11 1M11 1H3.5M11 1V8.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
-                </a>
+                </Link>
               </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-[280px_1fr_140px] gap-4 md:gap-8 items-start py-8 border-b border-gray-300">
@@ -121,12 +121,12 @@ export default function page() {
               </h3>
               <p className="text-[15px] text-gray-600 leading-relaxed md:pt-2">Agricultural data, digital farmer networks and programme delivery infrastructure.</p>
               <div className="md:text-right md:pt-2">
-                <a href="#" className="inline-flex items-center gap-1 text-sm font-medium hover:opacity-70 transition-opacity whitespace-nowrap">
+                <Link href="/partner" className="inline-flex items-center gap-1 text-sm font-medium hover:opacity-70 transition-opacity whitespace-nowrap">
                   Partner with us
                   <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M1 11L11 1M11 1H3.5M11 1V8.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -138,12 +138,12 @@ export default function page() {
         <div className="relative z-10 max-w-3xl mx-auto self-center my-auto px-6 w-full">
           <p className="text-4xl sm:text-6xl md:text-[5rem] text-white leading-tight md:leading-19 my-8 tracking-tight text-center md:whitespace-nowrap">Not sure where you <span className="font-instrument-serif font-medium italic">fit?</span></p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full">
-            <div className="bg-mint py-3 px-6 rounded-4xl flex items-center justify-center cursor-pointer w-full sm:w-fit text-center">
+            <Link href="/contact" className="bg-mint py-3 px-6 rounded-4xl flex items-center justify-center cursor-pointer w-full sm:w-fit text-center">
               <p>Contact us</p>
-            </div>
-            <div className="py-3 border border-white/30 rounded-4xl px-6 text-white bg-white/20 backdrop-blur-xs font-medium w-full sm:w-fit cursor-pointer text-center">
+            </Link>
+            <a href="https://wa.me/2348109992384" className="py-3 border border-white/30 rounded-4xl px-6 text-white bg-white/20 backdrop-blur-xs font-medium w-full sm:w-fit cursor-pointer text-center">
               <p>Chat on WhatsApp</p>
-            </div>
+            </a>
           </div>
         </div>
       </section>
