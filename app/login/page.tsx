@@ -1,8 +1,45 @@
+"use client"
+import { useState } from "react";
+import { auth } from "@/firebase/firebase"
+import { signInWithEmailAndPassword, AuthError } from "firebase/auth";
+import { useRouter } from "next/navigation";
 import photo3 from "@/assets/Box-selection.png"
 import Image from "next/image";
 import Link from "next/link";
+import toast from "react-hot-toast";
 
 export default function page() {
+   const router = useRouter()
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  //loading state
+  const [isLoading, setIsLoading] = useState(false)
+
+  const handleLogin = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setIsLoading(true)
+    try {
+      await signInWithEmailAndPassword(auth, email, password)
+      toast.success("Logged in successfully")
+      router.push("/dashboard")
+      
+    } catch (err: unknown) {
+      console.log(err)
+
+      const firebaseError = err as AuthError;
+      if (firebaseError.code === "auth/email-already-in-use") {
+        toast.error("This email is already registered. Try logging in.");
+      } else if (firebaseError.code === "auth/weak-password") {
+        toast.error("Password should be at least 6 characters.");
+      } else {
+        toast.error(firebaseError.message || "Failed to create an account.");
+      }
+    } finally {
+      setIsLoading(false)
+    }
+
+  }
+
   return (
     <div className="grid grid-cols-2 max-lg:grid-cols-1 p-2 h-screen max-lg:h-auto bg-[#F6F6F2] overflow-hidden max-lg:overflow-visible">
       <div className="relative overflow-hidden min-h-[98vh] max-lg:min-h-[50vh] max-md:min-h-[40vh] rounded-3xl flex flex-col justify-between p-6 max-lg:hidden">
@@ -35,23 +72,25 @@ export default function page() {
             <h1 className="text-[3.5rem] max-md:text-[2.5rem]">Log <span className="font-instrument-serif italic font-medium">in</span></h1>
             <p className="text-black/70 leading-5 mb-6 max-md:text-sm">Request quotes and track very enquiry in one <br className="max-md:hidden" /> place.</p>
           </div>
-          <div>
+          <form onSubmit={handleLogin}>
             <div>
-              <p className="font-medium my-1">Email</p>
-              <input type="text" className="px-4 border border-black/40 bg-white rounded-xl h-12 w-full" placeholder="you@company.com" />
+              <div>
+                <p className="font-medium my-1">Email</p>
+                <input value={email} onChange={(e) => setEmail(e.target.value)} type="text" className="px-4 border border-black/40 bg-white rounded-xl h-12 w-full" placeholder="you@company.com" />
+              </div>
+              <div>
+                <p className="font-medium my-1">Password</p>
+                <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" className="px-4 border border-black/40 bg-white rounded-xl h-12 w-full" placeholder="At least 8 characters" />
+              </div>
+              <p className="underline float-right my-2 text-[0.8rem] cursor-pointer hover:text-[0.85rem]">Forgot Password?</p>
             </div>
-            <div>
-              <p className="font-medium my-1">Password</p>
-              <input type="text" className="px-4 border border-black/40 bg-white rounded-xl h-12 w-full" placeholder="At least 8 characters" />
+            <div className="mt-12">
+              <button type="submit" disabled={isLoading}className="bg-green-950 hover:bg-green-900 transition-colors text-white rounded-full w-full h-12 flex justify-center items-center my-6 disabled:opacity-50 cursor-pointer">
+                <p>{isLoading ? "Logging in..." : "Log in"}</p>
+              </button>
+              <p className="text-black/70 text-center">New here? <Link href="/signup" className="font-medium underline text-black cursor-pointer">Create an account</Link></p>
             </div>
-            <p className="underline float-right my-2 text-[0.8rem] cursor-pointer hover:text-[0.85rem]">Forgot Password?</p>
-          </div>
-          <div className="mt-12">
-            <div className="bg-green-950 text-white rounded-full w-full h-12 flex justify-center items-center my-6">
-              <p>Log in</p>
-            </div>
-            <p className="text-black/70 text-center">New here? <Link href="/signup" className="font-medium underline text-black cursor-pointer">Create an account</Link></p>
-          </div>
+          </form>
         </div>
       </div>
     </div>

@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import Link from "next/link";
 import photo1 from "@/assets/cows.jpeg"
 import maize from "@/assets/maize.jpeg"
-import rice from "@/assets/rice.jpeg"
+import rice from "@/assets/paddy.jpeg"
 import soybeans from "@/assets/soybeans.jpeg"
 import cocoabeans from "@/assets/cocoabeans.jpeg"
 import photo4 from "@/assets/cap.jpeg"
@@ -147,7 +147,7 @@ export default function Home() {
               </div>
               <div className="relative z-10 p-6 pt-0">
                 <h3 className="text-white text-3xl md:text-[2rem] font-medium mb-4 tracking-tight">
-                  Rice
+                  Paddy Rice
                 </h3>
                 <div className="flex items-center justify-between border-t border-white/20 pt-4 transition-opacity group-hover:opacity-80">
                   <span className="text-white text-sm font-medium">Request a quote</span>
