@@ -31,6 +31,7 @@ export default function page() {
       } else {
         setIsLoading(false)
       }
+      
       return unsubscribe();
     })
   }, [router])
