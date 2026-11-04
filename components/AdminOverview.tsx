@@ -120,13 +120,15 @@ export default function AdminOverview() {
   }, []);
 
   // Calculate new quote requests from the last 7 days
-  const newThisWeek = useMemo(() => {
-    const sevenDaysAgo = Date.now() - 7 * 24 * 60 * 60 * 1000;
+  const [newThisWeek, setNewThisWeek] = useState(0);
 
-    return quotes.filter((quote) => {
+  useEffect(() => {
+    const sevenDaysAgo = Date.now() - 7 * 24 * 60 * 60 * 1000;
+    const count = quotes.filter((quote) => {
       const timestamp = quote.createdAt?.toMillis?.();
-      return timestamp && timestamp >= sevenDaysAgo;
+      return timestamp !== undefined && timestamp >= sevenDaysAgo;
     }).length;
+    setNewThisWeek(count);
   }, [quotes]);
 
   const newRequests = quotes.filter(
@@ -309,13 +311,12 @@ export default function AdminOverview() {
 
                       <td className="px-6 py-4">
                         <span
-                          className={`px-3 py-1 rounded-full text-xs font-medium ${
-                            quote.status === "New"
+                          className={`px-3 py-1 rounded-full text-xs font-medium ${quote.status === "New"
                               ? "bg-gray-100 text-black"
                               : quote.status === "Contacted"
-                              ? "bg-[#D1F84A] text-black"
-                              : "bg-[#0B2F24] text-white"
-                          }`}
+                                ? "bg-[#D1F84A] text-black"
+                                : "bg-[#0B2F24] text-white"
+                            }`}
                         >
                           {quote.status}
                         </span>
@@ -340,9 +341,8 @@ export default function AdminOverview() {
           <h3 className="text-2xl font-medium mb-3">
             {loading
               ? "Loading enquiries..."
-              : `Follow up on ${newRequests} new buyer ${
-                  newRequests === 1 ? "enquiry" : "enquiries"
-                }.`}
+              : `Follow up on ${newRequests} new buyer ${newRequests === 1 ? "enquiry" : "enquiries"
+              }.`}
           </h3>
 
           <p className="text-sm text-white/70 mb-8 leading-relaxed">
