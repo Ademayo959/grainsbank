@@ -162,12 +162,16 @@ export default function AdminOverview() {
     });
   };
 
-  const today = new Date().toLocaleDateString("en-NG", {
-    weekday: "long",
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  });
+  const [today, setToday] = useState("")
+  
+  useEffect(() => {
+    setToday(new Date().toLocaleDateString("en-NG", {
+      weekday: "long",
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+    }))
+  }, [])
 
   return (
     <div className="max-w-6xl mx-auto">
@@ -312,10 +316,10 @@ export default function AdminOverview() {
                       <td className="px-6 py-4">
                         <span
                           className={`px-3 py-1 rounded-full text-xs font-medium ${quote.status === "New"
-                              ? "bg-gray-100 text-black"
-                              : quote.status === "Contacted"
-                                ? "bg-[#D1F84A] text-black"
-                                : "bg-[#0B2F24] text-white"
+                            ? "bg-gray-100 text-black"
+                            : quote.status === "Contacted"
+                              ? "bg-[#D1F84A] text-black"
+                              : "bg-[#0B2F24] text-white"
                             }`}
                         >
                           {quote.status}
