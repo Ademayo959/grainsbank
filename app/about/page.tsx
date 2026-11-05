@@ -15,12 +15,12 @@ export default function page() {
         <div className="relative z-10 px-6 pb-10 md:px-[60px] md:pb-[40px] flex flex-col lg:flex-row justify-between items-start lg:items-end gap-10 w-full">
           <div className="max-w-fit">
             <h1 className="text-[3.5rem] md:text-[6.5rem] leading-[0.95] font-light tracking-[-2px] text-white mb-2">
-              Nigerian<br />agriculture, <span className="font-instrument-serif italic tracking-normal">built for <br />global markets.</span>
+              A digital<br />agribusiness <br />ecosystem for a <span className="font-instrument-serif italic tracking-normal">prosperous Africa.</span>
             </h1>
           </div>
           <div className="max-w-[320px] flex flex-col gap-6 pb-2">
             <p className="text-[0.89rem] leading-5 text-white font-normal">
-              Grainsbank connects farmers, buyers and every link between them on one technology-driven platform
+              Grainsbank agriculture rom farm to market, on one technology-driven platform.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <Link href="/dashboard" className="bg-mint text-black text-sm font-medium px-6 py-3 rounded-full text-center hover:bg-mint/90 transition-colors">
@@ -32,20 +32,252 @@ export default function page() {
       </div>
       <div className="max-w-6xl mx-auto">
         <div>
-          <p className="font-inter text-[3.5rem] font-light leading-14 tracking-tighter max-w-[85%]">One connected platform where a farmer can produce, finance, store, transport and <span className="font-instrument-serif italic font-medium">sell.</span></p>
+          <p className="font-inter text-[3.5rem] font-light leading-14 tracking-tighter max-w-[85%]">Grainsbank Digital Agribusiness Limited is <span className="font-instrument-serif italic font-medium">building the bridge</span> between the farm and the market.</p>
           <div className="grid grid-cols-3 max-md:grid-cols-1 max-md:gap-6 gap-10 mt-24 mb-12 max-sm:px-4 max-sm:my-8">
             <div className="border-t border-black/20">
               <p className="text-[1.8rem] font-inter mt-4">Who we are</p>
-              <p className="text-black/70 font-inter">Grainsbank Digital Agribusiness Limited connects farmers, suppliers, financial institutions, traders, processors, logistics providers, warehouses and consumers.</p>
+              <p className="text-black/70 font-inter">A technology-driven agribusiness connecting farmers, input suppliers, financial institutions, mechanization providers, traders, processors, logistics providers, warehouses and consumers.</p>
             </div>
             <div className="border-t border-black/20">
-              <p className="text-[1.8rem] font-inter mt-4">What we do</p>
-              <p className="text-black/70 font-inter">We combine agriculture, digital technology, AI, agricultural data, finance, commerce and logistics into one platform.</p>
+              <p className="text-[1.8rem] font-inter mt-4">What we combine</p>
+              <p className="text-black/70 font-inter">Agriculture, digital technology, AI, agricultural data, finance, commerce, logistics, mechanization, processing and market access in one connected platform.</p>
             </div>
             <div className="border-t border-black/20">
-              <p className="text-[1.8rem] font-inter mt-4">Why it matters</p>
+              <p className="text-[1.8rem] font-inter mt-4">What we want</p>
               <p className="text-black/70 font-inter">To make agriculture more productive, transparent, accessible, profitable and technology-enabled.</p>
             </div>
+          </div>
+        </div>
+        <div className="w-full flex flex-col gap-6 mb-24 max-md:gap-4 max-sm:mb-16">
+          <div className="grid grid-cols-[1fr_1fr] max-md:grid-cols-1 gap-6">
+
+            {/* Vision Card */}
+            <div className="bg-[#7a8d62] text-white rounded-3xl p-10 max-sm:p-6 flex flex-col justify-between min-h-[350px] relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-b from-white/10 to-transparent pointer-events-none"></div>
+              <div className="relative z-10 border border-white/30 rounded-full px-4 py-1 w-fit mb-8">
+                <p className="text-sm font-medium">Our vision</p>
+              </div>
+              <p className="relative z-10 text-[2rem] max-md:text-[1.8rem] max-sm:text-[1.5rem] leading-tight font-light tracking-tight">
+                To become Africa's leading digital agribusiness ecosystem, transforming how resources, technology, finance, production and markets are <span className="italic font-instrument-serif">connected.</span>
+              </p>
+            </div>
+
+            {/* Mission Card */}
+            <div className="bg-[#0f3a23] text-white rounded-3xl p-10 max-sm:p-6 flex flex-col justify-between min-h-[350px]">
+              <div className="border border-white/30 rounded-full px-4 py-1 w-fit mb-8">
+                <p className="text-sm font-medium text-[#d3f37a]">Our mission</p>
+              </div>
+              <p className="text-[2rem] max-md:text-[1.8rem] max-sm:text-[1.5rem] leading-tight font-light tracking-tight">
+                To empower farmers and agricultural businesses through digital technology, intelligent data, access to finance, modern farming services, efficient supply chains and <span className="italic font-instrument-serif">reliable markets.</span>
+              </p>
+            </div>
+          </div>
+
+          {/* Core Objective Card */}
+          <div className="bg-[#d3f37a] text-[#0f3a23] rounded-3xl p-8 max-sm:p-6 flex flex-row max-md:flex-col justify-between items-start md:items-center gap-6">
+            <div className="border border-[#0f3a23]/20 rounded-full px-4 py-1 w-fit shrink-0">
+              <p className="text-sm font-medium">Our core objective</p>
+            </div>
+            <p className="text-[1.3rem] max-md:text-[1.1rem] leading-snug font-normal max-w-4xl md:text-right md:pr-10">
+              A connected agricultural economy where a farmer can access everything needed to produce, finance, monitor, process, store, transport and sell, through one integrated digital ecosystem.
+            </p>
+          </div>
+        </div>
+        <div className="w-full bg-white rounded-3xl p-10 max-sm:p-6 mb-24 max-sm:mb-16 shadow-sm border border-black/5">
+          <div className="mb-12">
+            <h3 className="text-xl font-medium tracking-[0.2em] mb-2 text-black/80">G.R.A.I.N.S.B.A.N.K</h3>
+            <p className="text-black/60 text-sm">Our name, our purpose.</p>
+          </div>
+          <div className="grid grid-cols-6 max-md:grid-cols-5 max-sm:grid-cols-3 gap-y-10 gap-x-4">
+            {/* Row 1 */}
+            <div className="flex flex-col gap-2">
+              <span className="text-[2.75rem] font-light border-b border-black/10 pb-2">G</span>
+              <span className="text-sm text-black/80">Growth</span>
+            </div>
+            <div className="flex flex-col gap-2">
+              <span className="text-[2.75rem] font-light border-b border-black/10 pb-2">R</span>
+              <span className="text-sm text-black/80">Resources</span>
+            </div>
+            <div className="flex flex-col gap-2">
+              <span className="text-[2.75rem] font-light border-b border-black/10 pb-2">A</span>
+              <span className="text-sm text-black/80">Agriculture</span>
+            </div>
+            <div className="flex flex-col gap-2">
+              <span className="text-[2.75rem] font-light border-b border-black/10 pb-2">I</span>
+              <span className="text-sm text-black/80">Innovation</span>
+            </div>
+            <div className="flex flex-col gap-2">
+              <span className="text-[2.75rem] font-light border-b border-black/10 pb-2">N</span>
+              <span className="text-sm text-black/80">Network</span>
+            </div>
+
+            {/* Row 2 */}
+            <div className="flex flex-col gap-2">
+              <span className="text-[2.75rem] font-light border-b border-black/10 pb-2">S</span>
+              <span className="text-sm text-black/80">Supply</span>
+            </div>
+            <div className="flex flex-col gap-2">
+              <span className="text-[2.75rem] font-light border-b border-black/10 pb-2">B</span>
+              <span className="text-sm text-black/80">Business</span>
+            </div>
+            <div className="flex flex-col gap-2">
+              <span className="text-[2.75rem] font-light border-b border-black/10 pb-2">A</span>
+              <span className="text-sm text-black/80">Agro-processing</span>
+            </div>
+            <div className="flex flex-col gap-2">
+              <span className="text-[2.75rem] font-light border-b border-black/10 pb-2">N</span>
+              <span className="text-sm text-black/80">Nutrition</span>
+            </div>
+            <div className="flex flex-col gap-2">
+              <span className="text-[2.75rem] font-light border-b border-black/10 pb-2">K</span>
+              <span className="text-sm text-black/80">Knowledge</span>
+            </div>
+          </div>
+        </div>
+        <div className="w-full mb-24 max-sm:mb-16">
+          <div className="mb-12">
+            <h2 className="text-[3rem] max-md:text-[2.5rem] font-light leading-[1.1] tracking-tight mb-4">
+              Twelve platforms, <span className="font-instrument-serif italic font-medium">one ecosystem.</span>
+            </h2>
+            <p className="text-black/60 text-sm max-w-2xl">
+              We're starting with the commodity marketplace and building onwards. The rest of the ecosystem is planned and will be introduced step by step.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-4 max-lg:grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1 gap-4">
+
+            {/* Platform 01 */}
+            <div className="bg-white rounded-2xl p-6 flex flex-col min-h-[220px] border border-black/5">
+              <div className="flex justify-between items-center mb-8">
+                <span className="text-xs text-black/40 font-medium">01</span>
+                <span className="text-[10px] border border-black/20 rounded-full px-2 py-0.5 text-black/60">Planned</span>
+              </div>
+              <h4 className="text-xl font-medium mb-2">FarmerBank</h4>
+              <p className="text-xs text-black/50 mb-4">Farmer network</p>
+              <p className="text-sm text-black/70 mt-auto leading-relaxed">Farmer registration, profiles, farm records and cooperative management.</p>
+            </div>
+
+            {/* Platform 02 */}
+            <div className="bg-white rounded-2xl p-6 flex flex-col min-h-[220px] border border-black/5">
+              <div className="flex justify-between items-center mb-8">
+                <span className="text-xs text-black/40 font-medium">02</span>
+                <span className="text-[10px] border border-black/20 rounded-full px-2 py-0.5 text-black/60">Planned</span>
+              </div>
+              <h4 className="text-xl font-medium mb-2">FarmBank</h4>
+              <p className="text-xs text-black/50 mb-4">Digital farm records</p>
+              <p className="text-sm text-black/70 mt-auto leading-relaxed">Farm mapping, GIS boundaries, soil information and satellite monitoring.</p>
+            </div>
+
+            {/* Platform 03 */}
+            <div className="bg-white rounded-2xl p-6 flex flex-col min-h-[220px] border border-black/5">
+              <div className="flex justify-between items-center mb-8">
+                <span className="text-xs text-black/40 font-medium">03</span>
+                <span className="text-[10px] border border-black/20 rounded-full px-2 py-0.5 text-black/60">Planned</span>
+              </div>
+              <h4 className="text-xl font-medium mb-2">InputBank</h4>
+              <p className="text-xs text-black/50 mb-4">Input marketplace</p>
+              <p className="text-sm text-black/70 mt-auto leading-relaxed">Seeds, fertilisers, agrochemicals, feeds, tools and machinery from verified suppliers.</p>
+            </div>
+
+            {/* Platform 04 */}
+            <div className="bg-white rounded-2xl p-6 flex flex-col min-h-[220px] border border-black/5">
+              <div className="flex justify-between items-center mb-8">
+                <span className="text-xs text-black/40 font-medium">04</span>
+                <span className="text-[10px] border border-black/20 rounded-full px-2 py-0.5 text-black/60">Planned</span>
+              </div>
+              <h4 className="text-xl font-medium mb-2">MachineBank</h4>
+              <p className="text-xs text-black/50 mb-4">Mechanisation network</p>
+              <p className="text-sm text-black/70 mt-auto leading-relaxed">Tractor services, ploughing, planting, spraying, harvesting and equipment rental.</p>
+            </div>
+
+            {/* Platform 05 */}
+            <div className="bg-white rounded-2xl p-6 flex flex-col min-h-[220px] border border-black/5">
+              <div className="flex justify-between items-center mb-8">
+                <span className="text-xs text-black/40 font-medium">05</span>
+                <span className="text-[10px] border border-black/20 rounded-full px-2 py-0.5 text-black/60">Planned</span>
+              </div>
+              <h4 className="text-xl font-medium mb-2">AgriIntel</h4>
+              <p className="text-xs text-black/50 mb-4">AI and data</p>
+              <p className="text-sm text-black/70 mt-auto leading-relaxed">Crop monitoring, pest and disease identification, yield prediction and decision support.</p>
+            </div>
+
+            {/* Platform 06 */}
+            <div className="bg-white rounded-2xl p-6 flex flex-col min-h-[220px] border border-black/5">
+              <div className="flex justify-between items-center mb-8">
+                <span className="text-xs text-black/40 font-medium">06</span>
+                <span className="text-[10px] border border-black/20 rounded-full px-2 py-0.5 text-black/60">Planned</span>
+              </div>
+              <h4 className="text-xl font-medium mb-2">ClimateBank</h4>
+              <p className="text-xs text-black/50 mb-4">Weather and climate</p>
+              <p className="text-sm text-black/70 mt-auto leading-relaxed">Forecasts, rainfall, drought and flood alerts and planting recommendations.</p>
+            </div>
+
+            {/* Platform 07 */}
+            <div className="bg-white rounded-2xl p-6 flex flex-col min-h-[220px] border border-black/5">
+              <div className="flex justify-between items-center mb-8">
+                <span className="text-xs text-black/40 font-medium">07</span>
+                <span className="text-[10px] border border-black/20 rounded-full px-2 py-0.5 text-black/60">Planned</span>
+              </div>
+              <h4 className="text-xl font-medium mb-2">AgriFinance</h4>
+              <p className="text-xs text-black/50 mb-4">Finance network</p>
+              <p className="text-sm text-black/70 mt-auto leading-relaxed">Connections to loans, input and equipment financing, insurance and farm investment.</p>
+            </div>
+
+            {/* Platform 08 (Active) */}
+            <div className="bg-[#0f3a23] text-white rounded-2xl p-6 flex flex-col min-h-[220px] shadow-lg">
+              <div className="flex justify-between items-center mb-8">
+                <span className="text-xs text-white/50 font-medium">08</span>
+                <span className="text-[10px] bg-[#d3f37a] text-[#0f3a23] font-bold rounded-full px-2 py-0.5">Starting here</span>
+              </div>
+              <h4 className="text-xl font-medium mb-2">CommodityBank</h4>
+              <p className="text-xs text-[#d3f37a] mb-4">Marketplace</p>
+              <p className="text-sm text-white/80 mt-auto leading-relaxed">Maize, rice, soybeans, cassava, yam, sorghum, sesame, cocoa and more, linking producers to buyers.</p>
+            </div>
+
+            {/* Platform 09 */}
+            <div className="bg-white rounded-2xl p-6 flex flex-col min-h-[220px] border border-black/5">
+              <div className="flex justify-between items-center mb-8">
+                <span className="text-xs text-black/40 font-medium">09</span>
+                <span className="text-[10px] border border-black/20 rounded-full px-2 py-0.5 text-black/60">Planned</span>
+              </div>
+              <h4 className="text-xl font-medium mb-2">ProcessBank</h4>
+              <p className="text-xs text-black/50 mb-4">Processing network</p>
+              <p className="text-sm text-black/70 mt-auto leading-relaxed">Grain processing, rice milling, oil and feed production, packaging and value addition.</p>
+            </div>
+
+            {/* Platform 10 */}
+            <div className="bg-white rounded-2xl p-6 flex flex-col min-h-[220px] border border-black/5">
+              <div className="flex justify-between items-center mb-8">
+                <span className="text-xs text-black/40 font-medium">10</span>
+                <span className="text-[10px] border border-black/20 rounded-full px-2 py-0.5 text-black/60">Planned</span>
+              </div>
+              <h4 className="text-xl font-medium mb-2">StoreBank</h4>
+              <p className="text-xs text-black/50 mb-4">Storage network</p>
+              <p className="text-sm text-black/70 mt-auto leading-relaxed">Warehouses, silos, cold storage and digital inventory records.</p>
+            </div>
+
+            {/* Platform 11 */}
+            <div className="bg-white rounded-2xl p-6 flex flex-col min-h-[220px] border border-black/5">
+              <div className="flex justify-between items-center mb-8">
+                <span className="text-xs text-black/40 font-medium">11</span>
+                <span className="text-[10px] border border-black/20 rounded-full px-2 py-0.5 text-black/60">Planned</span>
+              </div>
+              <h4 className="text-xl font-medium mb-2">LogisticsBank</h4>
+              <p className="text-xs text-black/50 mb-4">Logistics network</p>
+              <p className="text-sm text-black/70 mt-auto leading-relaxed">Truck booking, delivery management, route management and shipment tracking.</p>
+            </div>
+
+            {/* Platform 12 */}
+            <div className="bg-white rounded-2xl p-6 flex flex-col min-h-[220px] border border-black/5">
+              <div className="flex justify-between items-center mb-8">
+                <span className="text-xs text-black/40 font-medium">12</span>
+                <span className="text-[10px] border border-black/20 rounded-full px-2 py-0.5 text-black/60">Planned</span>
+              </div>
+              <h4 className="text-xl font-medium mb-2">KnowledgeBank</h4>
+              <p className="text-xs text-black/50 mb-4">Knowledge platform</p>
+              <p className="text-sm text-black/70 mt-auto leading-relaxed">Farmer education, agronomy, training, agent network and market education.</p>
+            </div>
+
           </div>
         </div>
         <div>

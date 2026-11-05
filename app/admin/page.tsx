@@ -1,36 +1,87 @@
-// app/admin/page.tsx
 "use client";
 
-import { useState, useEffect } from 'react';
-import Link from 'next/link';
-import { useRouter } from 'next/navigation';
-import { onAuthStateChanged, signOut } from 'firebase/auth';
-import { auth } from '@/firebase/firebase'; // Adjust path
-import toast from 'react-hot-toast';
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { onAuthStateChanged, signOut, type User } from "firebase/auth";
+import { doc, getDoc } from "firebase/firestore";
+import { auth, db } from "@/firebase/firebase";
+import toast from "react-hot-toast";
 
-// Import your sub-components from the components folder
-import AdminOverview from '@/components/AdminOverview';
-import AdminProducts from '@/components/AdminProducts';
-import AdminQuotes from '@/components/AdminQuotes';
-import AdminNetwork from '@/components/AdminNetwork';
+import AdminOverview from "@/components/AdminOverview";
+import AdminProducts from "@/components/AdminProducts";
+import AdminQuotes from "@/components/AdminQuotes";
+import AdminNetwork from "@/components/AdminNetwork";
 
 export default function AdminDashboardPage() {
   const router = useRouter();
+
   const [activeTab, setactiveTab] = useState("AdminOverview");
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [user, setuser] = useState<any>(null);
+  const [user, setuser] = useState<User | null>(null);
   const [userName, setuserName] = useState("Adaeze Okafor");
 
+  const [isAdmin, setIsAdmin] = useState(false);
+  const [checkingAccess, setCheckingAccess] = useState(true);
+
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      if (!user) {
-        router.push('/login');
+    let isMounted = true;
+
+    const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
+      if (!currentUser) {
+        if (isMounted) {
+          setuser(null);
+          setIsAdmin(false);
+          setCheckingAccess(false);
+          router.replace("/login");
+        }
+
         return;
       }
-      setuser(user);
-      if (user.displayName) setuserName(user.displayName);
+
+      try {
+        // Check whether the user's UID exists in the admins collection
+        const adminRef = doc(db, "admins", currentUser.uid);
+        const adminSnap = await getDoc(adminRef);
+
+        if (!isMounted) return;
+
+        if (adminSnap.exists()) {
+          setuser(currentUser);
+          setIsAdmin(true);
+
+          if (currentUser.displayName) {
+            setuserName(currentUser.displayName);
+          }
+        } else {
+          setIsAdmin(false);
+          toast.error("You are not authorized to access the admin dashboard.");
+
+          await signOut(auth);
+
+          if (isMounted) {
+            router.replace("/login");
+          }
+        }
+      } catch (error) {
+        console.error("Admin access verification failed:", error);
+
+        if (isMounted) {
+          setIsAdmin(false);
+          toast.error("Could not verify admin access.");
+          router.replace("/login");
+        }
+      } finally {
+        if (isMounted) {
+          setCheckingAccess(false);
+        }
+      }
     });
-    return () => unsubscribe();
+
+    return () => {
+      isMounted = false;
+      unsubscribe();
+    };
   }, [router]);
 
   const handleLogout = async () => {
@@ -43,6 +94,22 @@ export default function AdminDashboardPage() {
       toast.error("Failed to log out");
     }
   };
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+  setMounted(true);
+}, []);
+
+  if (!mounted || checkingAccess) {
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-[#F6F6F2]">
+      <div className="w-8 h-8 border-4 border-[#0B2F24] border-t-transparent rounded-full animate-spin" />
+    </div>
+  );
+}
+
+if (!user || !isAdmin) {
+  return null;
+}
 
   return (
     <div className="min-h-screen bg-[#F6F6F2] flex font-sans">
