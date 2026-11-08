@@ -1,10 +1,43 @@
+"use client"
+
+import { useState } from "react"
+import toast from "react-hot-toast"
 import Image from "next/image"
-import Link from "next/link"
 import photo3 from "@/assets/Box-selection.png"
 import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
 
-export default function page() {
+const initialForm = { organisation: "", contactPerson: "", email: "", phone: "", orgType: "", message: "", website: "" }
+const inputClass = "px-4 border border-black/40 bg-white rounded-xl h-12 w-full outline-0"
+
+export default function PartnerPage() {
+  const [form, setForm] = useState(initialForm)
+  const [isLoading, setIsLoading] = useState(false)
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }))
+  }
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setIsLoading(true)
+    try {
+      const res = await fetch("/api/partner", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      })
+      const data = await res.json()
+      if (!res.ok) throw new Error(data.error || "Something went wrong.")
+      toast.success("Enquiry sent. Our team will get back to you.")
+      setForm(initialForm)
+    } catch (err) {
+      toast.error(err instanceof Error ? err.message : "Failed to send. Please try again.")
+    } finally {
+      setIsLoading(false)
+    }
+  }
+
   return (
     <div className="p-2 bg-[#F6F6F2]">
       <div className="relative overflow-hidden min-h-[65vh] max-md:min-h-[50vh] rounded-3xl flex flex-col justify-between mb-12">
@@ -58,41 +91,42 @@ export default function page() {
               </div>
             </div>
           </div>
-          <div className="bg-white rounded-2xl p-6">
+
+          <form onSubmit={handleSubmit} className="bg-white rounded-2xl p-6">
             <p className="text-[2.3rem] max-md:text-[1.8rem] font-inter">Send us a <span className="font-instrument-serif italic font-medium">message</span></p>
             <div className="my-3">
-              <p className="font-medium my-1">Organisation name</p>
-              <input type="text" className="px-4 border border-black/40 bg-white rounded-xl h-12 w-full outline-0" placeholder="Your organisation" />
+              <label htmlFor="organisation" className="block font-medium my-1">Organisation name</label>
+              <input id="organisation" name="organisation" type="text" required value={form.organisation} onChange={handleChange} className={inputClass} placeholder="Your organisation" />
             </div>
             <div className="my-3">
-              <p className="font-medium my-1">Contact person</p>
-              <input type="text" className="px-4 border border-black/40 bg-white rounded-xl h-12 w-full outline-0" placeholder="Full name" />
+              <label htmlFor="contactPerson" className="block font-medium my-1">Contact person</label>
+              <input id="contactPerson" name="contactPerson" type="text" required value={form.contactPerson} onChange={handleChange} className={inputClass} placeholder="Full name" />
             </div>
             <div className="my-3">
-              <p className="font-medium my-1">Email</p>
-              <input type="text" className="px-4 border border-black/40 bg-white rounded-xl h-12 w-full outline-0" placeholder="you@organisation.com" />
+              <label htmlFor="email" className="block font-medium my-1">Email</label>
+              <input id="email" name="email" type="email" required value={form.email} onChange={handleChange} className={inputClass} placeholder="you@organisation.com" />
             </div>
             <div className="my-3">
-              <p className="font-medium my-1">Phone or Whatsapp</p>
-              <input type="text" className="px-4 border border-black/40 bg-white rounded-xl h-12 w-full outline-0" placeholder="+234" />
+              <label htmlFor="phone" className="block font-medium my-1">Phone or WhatsApp</label>
+              <input id="phone" name="phone" type="tel" value={form.phone} onChange={handleChange} className={inputClass} placeholder="+234" />
             </div>
             <div className="my-3">
-              <p className="font-medium my-1">Type of Organisation</p>
-              <input type="text" className="px-4 border border-black/40 bg-white rounded-xl h-12 w-full outline-0" placeholder="e.g. Maize, 20 tonnes" />
+              <label htmlFor="orgType" className="block font-medium my-1">Type of organisation</label>
+              <input id="orgType" name="orgType" type="text" value={form.orgType} onChange={handleChange} className={inputClass} placeholder="e.g. Bank, logistics company, processor" />
             </div>
             <div className="my-3">
-              <p className="font-medium my-1">How would you like to work with us?</p>
-              <textarea placeholder="Tell us a little about your idea" className="px-4 resize-none border border-black/40 bg-white rounded-xl h-52 py-3 outline-0 w-full"></textarea>
+              <label htmlFor="message" className="block font-medium my-1">How would you like to work with us?</label>
+              <textarea id="message" name="message" required value={form.message} onChange={handleChange} placeholder="Tell us a little about your idea" className="px-4 resize-none border border-black/40 bg-white rounded-xl h-52 py-3 outline-0 w-full" />
             </div>
-            <div className="mt-3">
-              <div className="bg-green-900 text-white rounded-full w-full h-12 flex justify-center items-center my-6">
-                <p>Submit enquiry</p>
-              </div>
-            </div>
-          </div>
+            {/* Honeypot: hidden from people, bots fill it */}
+            <input name="website" type="text" value={form.website} onChange={handleChange} className="hidden" tabIndex={-1} autoComplete="off" aria-hidden="true" />
+            <button type="submit" disabled={isLoading} className="bg-green-900 text-white rounded-full w-full h-12 flex justify-center items-center my-6 disabled:opacity-60 disabled:cursor-not-allowed">
+              {isLoading ? "Sending..." : "Submit enquiry"}
+            </button>
+          </form>
         </div>
       </div>
       <Footer />
     </div>
   )
-};
+}
