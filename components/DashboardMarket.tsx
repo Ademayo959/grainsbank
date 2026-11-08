@@ -139,34 +139,22 @@ export default function DashboardMarket() {
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
               {filteredProducts.map((product) => (
-                <div
-                  key={product.id}
-                  className="bg-white p-4 rounded-3xl shadow-sm border border-black/5 flex flex-col"
-                >
-
+                <div key={product.id} className="bg-white p-4 rounded-3xl shadow-sm border border-black/5 flex flex-col">
                   {/* PRODUCT IMAGE PLACEHOLDER */}
                   <div className="h-40 rounded-2xl bg-gradient-to-b from-[#8B9C73] to-[#1A2F1C] relative mb-4">
                     <span className="absolute top-3 left-3 bg-white/20 backdrop-blur-md text-white text-xs px-3 py-1 rounded-full">
                       {product.category}
                     </span>
                   </div>
-
                   {/* PRODUCT DETAILS */}
                   <h3 className="text-xl font-medium">
                     {product.name}
                   </h3>
-
                   <p className="text-xs text-black/50 mb-4">
                     {product.grade} · per tonne
                   </p>
-
-                  <p className="text-sm text-black/60 mb-4">
-                    {product.description}
-                  </p>
-
-                  {/* PRICE */}
+                  <p className="text-sm text-black/60 mb-4">{product.description}</p>
                   {/* PRICE & WHATSAPP BUTTON */}
                   <div className="mt-auto">
                     <p className="font-semibold text-sm mb-4">
@@ -175,7 +163,6 @@ export default function DashboardMarket() {
                         {" "} / tonne
                       </span>
                     </p>
-
                     <a
                       href={`https://wa.me/2348109992384?text=${encodeURIComponent(
                         `Hello, I'm interested in ${product.name}. Please provide more information about its availability and pricing.`
@@ -184,22 +171,14 @@ export default function DashboardMarket() {
                       rel="noopener noreferrer"
                       className="w-full flex items-center justify-center gap-2 bg-[#0B2F24] text-white py-3 rounded-xl text-sm font-medium hover:bg-[#164535] transition-colors"
                     >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                        className="w-5 h-5"
-                      >
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
                         <path d="M20.52 3.48A11.82 11.82 0 0 0 12.08 0C5.53 0 .2 5.33.2 11.88c0 2.09.55 4.13 1.6 5.93L.1 24l6.34-1.66a11.9 11.9 0 0 0 5.64 1.43h.01c6.55 0 11.88-5.33 11.88-11.88 0-3.17-1.24-6.15-3.45-8.41ZM12.09 21.8a9.9 9.9 0 0 1-5.04-1.38l-.36-.21-3.76.99 1-3.66-.23-.38a9.88 9.88 0 1 1 8.39 4.64Zm5.43-7.4c-.3-.15-1.78-.88-2.05-.98-.28-.1-.48-.15-.68.15-.2.3-.78.98-.95 1.18-.17.2-.35.23-.65.08-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.5-1.78-1.67-2.08-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.08-.15-.68-1.63-.93-2.23-.25-.6-.5-.52-.68-.53h-.58c-.2 0-.53.08-.8.38-.28.3-1.05 1.03-1.05 2.5s1.08 2.9 1.23 3.1c.15.2 2.13 3.25 5.15 4.55.72.31 1.28.5 1.72.64.72.23 1.38.2 1.9.12.58-.09 1.78-.73 2.03-1.43.25-.7.25-1.3.18-1.43-.08-.13-.28-.2-.58-.35Z" />
                       </svg>
-
                       Contact on WhatsApp
                     </a>
                   </div>
-
                 </div>
               ))}
-
             </div>
           )}
         </>

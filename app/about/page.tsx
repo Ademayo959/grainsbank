@@ -401,16 +401,25 @@ export default function page() {
           </div>
         </div>
       </div>
-      <section className="relative overflow-hidden min-h-[75vh] rounded-3xl flex flex-col justify-between">
-        <Image src={photo3} alt="Agriculture farm background" fill priority className="object-cover object-center " />
-        <div className="relative z-10 max-w-3xl mx-auto self-center my-auto">
-          <p className="text-[5rem] text-white leading-19 my-8 tracking-tight text-center">Let's move your next <br /><span className="font-instrument-serif font-medium italic">shipment.</span></p>
-          <div className="flex gap-4 justify-self-center">
-            <Link href="/dashboard" className="bg-mint py-3 px-6 rounded-4xl flex items-center justify-center cursor-pointer w-fit">
+      <section className="relative overflow-hidden min-h-[75vh] max-sm:min-h-[55vh] rounded-3xl max-sm:rounded-2xl flex flex-col justify-between px-6 py-10 md:px-10">
+        <Image src={photo3} alt="Agriculture farm background" fill priority sizes="100vw" className="object-cover object-center" />
+
+        <div className="absolute inset-0 bg-black/15" />
+
+        <div className="relative z-10 max-w-3xl w-full mx-auto self-center my-auto">
+          <p className="text-[5rem] max-lg:text-6xl max-md:text-5xl max-sm:text-4xl text-white leading-[1.05] max-sm:leading-tight my-8 max-sm:my-5 tracking-tight text-center">
+            Let's move your next
+            <br />
+            <span className="font-instrument-serif font-medium italic">shipment.</span>
+          </p>
+
+          <div className="flex gap-4 max-sm:flex-col max-sm:items-center justify-center">
+            <Link href="/dashboard" className="bg-mint py-3 px-6 max-sm:w-full max-sm:max-w-[220px] rounded-4xl flex items-center justify-center cursor-pointer w-fit text-sm md:text-base">
               <p>Request a quote</p>
             </Link>
-            <Link href="/contact" className="py-3 border border-white/30 rounded-4xl px-6 text-white font-medium w-fit cursor-pointer">
-              <p>Contact us</p>
+
+            <Link href="/contact" className="py-3 border border-white/30 rounded-4xl px-6 max-sm:w-full max-sm:max-w-[220px] text-white font-medium w-fit cursor-pointer flex items-center justify-center text-sm md:text-base">
+              <p>Chat on Whatsapp</p>
             </Link>
           </div>
         </div>
