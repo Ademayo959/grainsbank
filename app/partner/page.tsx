@@ -41,12 +41,18 @@ export default function PartnerPage() {
   return (
     <div className="p-2 bg-[#F6F6F2]">
       <div className="relative overflow-hidden min-h-[65vh] max-md:min-h-[50vh] rounded-3xl flex flex-col justify-between mb-12">
-        <Image src={photo3} alt="Agriculture farm background" fill priority className="object-cover object-center " />
+        <Image src={photo3} alt="Agriculture farm background" fill priority className="object-cover object-center" />
         <Navbar />
         <div className="relative z-10 px-6 pb-10 md:px-[60px] md:pb-[40px] flex flex-col lg:flex-row justify-between items-start lg:items-end gap-10 w-full">
-          <div className="flex items-end justify-between w-full">
-            <p className="font-inter text-[6rem] max-md:text-[3.5rem] text-white leading-20 max-sm:leading-14">Partner with <br /> <span className="font-instrument-serif italic font-medium">Grainsbank.</span></p>
-            <p className="text-[1.1rem] max-md:text-[1rem] text-white">Help us connect Nigerian agriculture to <br className="max-md:hidden" />markets at home and abroad.</p>
+          <div className="flex flex-col md:flex-row md:items-end justify-between w-full gap-6 md:gap-10">
+            <p className="font-inter text-[6rem] max-md:text-[4rem] max-sm:text-[3rem] text-white leading-[1.1] md:leading-20 tracking-tight">
+              Partner with <br />
+              <span className="font-instrument-serif italic font-medium">Grainsbank.</span>
+            </p>
+            <p className="text-[1.1rem] max-md:text-[1rem] text-white md:text-right max-w-xs md:max-w-sm shrink-0">
+              Help us connect Nigerian agriculture to <br className="hidden md:block" />
+              markets at home and abroad.
+            </p>
           </div>
         </div>
       </div>

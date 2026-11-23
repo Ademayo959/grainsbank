@@ -173,7 +173,7 @@ if (!user || !isAdmin) {
         {/* Profile Area */}
         <div className="p-6 border-t border-white/10 m-4">
           <div className="flex items-center gap-3 mb-6">
-            <img src="https://i.pravatar.cc/150?img=47" alt="Admin" className="w-10 h-10 rounded-full object-cover" />
+            <img src="https://images.unsplash.com/photo-1533460004989-cef01064af7e?w=400&q=80" alt="Admin" className="w-10 h-10 rounded-full object-cover" />
             <div>
               <p className="font-medium text-sm">{userName}</p>
               <p className="text-[11px] text-white/50">Platform Admin</p>
