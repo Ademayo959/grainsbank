@@ -9,6 +9,7 @@ export default function Navbar() {
       <div className="flex items-center gap-8 max-lg:gap-4 max-md:hidden text-white text-[1rem]">
         <Link href="/marketplace" className="cursor-pointer">Marketplace</Link>
         <Link href="/about" className="cursor-pointer">About</Link>
+        <Link href="/gallery" className="cursor-pointer">Gallery</Link>
         <Link href="/solutions" className="cursor-pointer">Solutions</Link>
         <Link href="/contact" className="cursor-pointer">Contact</Link>
       </div>

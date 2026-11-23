@@ -21,13 +21,14 @@ export default function Footer() {
         <div className="flex flex-col gap-2">
           <h3 className="text-[#d3f37a] text-sm font-medium mb-2">Explore</h3>
           <Link href="/signup" className="text-gray-300 hover:text-white transition-colors text-sm md:text-base w-fit">Register</Link>
+          <Link href="/gallery" className="text-gray-300 hover:text-white transition-colors text-sm md:text-base w-fit">Gallery</Link>
           <Link href="/partner" className="text-gray-300 hover:text-white transition-colors text-sm md:text-base w-fit">Partner with Us</Link>
-          <Link href="/solutions" className="text-gray-300 hover:text-white transition-colors text-sm md:text-base w-fit">Facebook</Link>
+          <Link href="https://web.facebook.com/uyff.farmers/?_rdc=1&_rdr#" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors text-sm md:text-base w-fit">Facebook</Link>
         </div>
         {/* Column 3: Contact Info */}
         <div className="flex flex-col gap-2">
           <h3 className="text-[#d3f37a] text-sm font-medium mb-2">Contact</h3>
-          <a href="tel:+2348000000000" className="text-gray-300 hover:text-white transition-colors text-sm md:text-base w-fit">+234 800 000 0000</a>
+          <a href="tel:+2348000000000" className="text-gray-300 hover:text-white transition-colors text-sm md:text-base w-fit">+234 810 999 2384</a>
           <a href="mailto:hello@grainsbank.com" className="text-gray-300 hover:text-white transition-colors text-sm md:text-base w-fit">hello@grainsbank.com</a>
           <a href="https://wa.me/2348109992384" className="text-gray-300 hover:text-white transition-colors text-sm md:text-base w-fit" target="_blank" rel="noopener noreferrer">WhatsApp</a>
         </div>
